@@ -1,5 +1,4 @@
 " Use Vim settings, rather than Vi settings
-" This must be first, because it changes other options as a side effect
 set nocompatible
 
 filetype off                   " required!
@@ -8,27 +7,10 @@ filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" let Vundle manage Vundle
-" required! 
 Bundle 'gmarik/vundle'
-
-" My Bundles here:
-
 Bundle 'Valloric/YouCompleteMe'
-
-"
-"
-" original repos on github
-"Bundle 'tpope/vim-fugitive'
-"Bundle 'Lokaltog/vim-easymotion'
-"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-"Bundle 'tpope/vim-rails.git'
-" vim-scripts repos
-"Bundle 'L9'
-"Bundle 'FuzzyFinder'
-" non github repos
-"Bundle 'git://git.wincent.com/command-t.git'
-" ...
+Bundle 'skammer/vim-css-color'
+Bundle 'pangloss/vim-javascript'
 
 
 filetype plugin indent on     " required!
@@ -71,3 +53,7 @@ set autoindent
 
 " syntax highlighting
 syntax enable
+
+set cmdheight=1 "The commandbar height
+
+set showmatch "Show matching bracets when text indicator is over them
