@@ -1,5 +1,5 @@
 " Use Vim settings, rather than Vi settings
-set nocompatible
+set nocompatible   " Be IMproved
 
 filetype off                   " required!
 
