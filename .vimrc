@@ -12,6 +12,9 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'skammer/vim-css-color'
 Bundle 'pangloss/vim-javascript'
 
+" For vim 74a
+:let &runtimepath.=',/usr/share/vim/vim74a' 
+:let $VIMRUNTIME = "/usr/share/vim/vim74a"
 
 filetype plugin indent on     " required!
 
