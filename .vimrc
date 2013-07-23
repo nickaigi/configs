@@ -1,7 +1,7 @@
-" Use Vim settings, rather than Vi settings
-set nocompatible   " Be IMproved
+set nocompatible                "Use Vim settings, rather than Vi settings
+                                "Be IMproved
 
-filetype off                   " required!
+filetype off                    "required!
 
 
 set rtp+=~/.vim/bundle/vundle/
@@ -12,51 +12,45 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'skammer/vim-css-color'
 Bundle 'pangloss/vim-javascript'
 
-" For vim 74a
+"vim 74a has issues getting the syntax files hence this two lines 
 :let &runtimepath.=',/usr/share/vim/vim74a' 
 :let $VIMRUNTIME = "/usr/share/vim/vim74a"
 
-filetype plugin indent on     " required!
+filetype plugin indent on       "required!
 
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
+set backspace=indent,eol,start  "allow backspacing over everything in insert mode
 
-" keep 50 lines of command line history
-set history=50
+set history=50                  "keep 50 lines of command line history
 
-" show the cursor position all the time
-set ruler
+set ruler                       "show the cursor position all the time
 
-" display incomplete commands
-set showcmd
+set showcmd                     "display incomplete commands
 
-" do incremental searching
-set incsearch
+set incsearch                   "do incremental searching
 
-" show line numbers
-set nu
+set nu                          "show line numbers
 
-" use spaces instead of tabs
-set expandtab
+set expandtab                   "use spaces instead of tabs
 
-" insert 4 spaces whenever the tab key is pressed
-set tabstop=4
+set tabstop=4                   "insert 4 spaces whenever the tab key is pressed
 
-" set indentation to 4 spaces
-set shiftwidth=4
+set shiftwidth=4                "set indentation to 4 spaces
 
-" highlight search terms
-set hlsearch
+set hlsearch                    "highlight search terms
 
-"Ignore Case during searches
-set ic
+set ic                          "Ignore Case during searches
 
-" start new line at the same indentation level
-set autoindent
+set autoindent                  "start new line at the same indentation level
 
-" syntax highlighting
-syntax enable
+syntax enable                   "syntax highlighting
 
-set cmdheight=1 "The commandbar height
+set cmdheight=1                 "The commandbar height
 
-set showmatch "Show matching bracets when text indicator is over them
+set showmatch                   "Show matching bracets when text indicator is over them
+
+set nobackup                    " do not keep backup files, it's 70's style cluttering
+
+set noswapfile                  " do not write annoying intermediate swap files,
+                                "    who did ever restore from swap files
+                                "    anyway?
+                                "    https://github.com/nvie/vimrc/blob/master/vimrc#L141
