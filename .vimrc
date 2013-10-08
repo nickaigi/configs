@@ -10,6 +10,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/nerdtree'
+Bundle 'sophacles/vim-bundle-mako'
 
 "vim 74a has issues getting the syntax files hence this two lines 
 :let &runtimepath.=',/usr/share/vim/vim74a' 
