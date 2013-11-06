@@ -1,0 +1,57 @@
+# nginx configuration for secure-dev.chopchop.com
+# the upstream component nginx needs to connect to
+upstream django {
+    #server unix:///tmp/uwsgi.sock; # for a file socket
+    server 127.0.0.1:8001; # for a web port socket (we'll use this first)
+    }
+
+# configuration of the server
+server {
+    # the port your site will be served on
+    listen      80;
+    # the domain name it will serve for
+    server_name .secure-dev.chopchopsites.com; # substitute your machine's IP address or FQDN
+    charset     utf-8;
+
+    if ($host ~* www\.(.*)) {
+        # rewrite www.*.mobi to *.mobi for shorter URL's
+  
+        # $1 contains '/foo', not 'www.mydomain.com/foo'
+        set $host_without_www $1;
+        rewrite ^(.*)$ http://$host_without_www$1 permanent;
+    }
+  
+    # max upload size
+    client_max_body_size 75M;   # adjust to taste
+
+    location /images/ {
+	    #root /www/static/ehouse9.com;
+        root /www/static/$host;
+    }
+ 
+    location /js/ {
+        root /www/static/$host;
+	    #root /www/static/ehouse9.com;
+    }
+ 
+    location /media {
+        root /www/static/adminsite;
+    }
+ 
+#    location /detect.js {
+#        proxy_pass   http://redirector_servers;
+#        proxy_set_header   Host             $host;
+#        proxy_set_header   Cookie           $cookie_desktop;
+#    }
+#
+
+    location /static {
+        alias /www/static; # your Django project's static files - amend as required
+    }
+
+    # Finally, send all non-media requests to the Django server.
+    location / {
+        uwsgi_pass  django;
+        include     /etc/nginx/uwsgi_params; # the uwsgi_params file you installed
+    }
+}

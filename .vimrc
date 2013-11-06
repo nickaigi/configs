@@ -8,13 +8,10 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'Valloric/YouCompleteMe'
+Bundle 'Valloric/YouCompleteMe' 
 Bundle 'scrooloose/nerdtree'
 Bundle 'sophacles/vim-bundle-mako'
-
-"vim 74a has issues getting the syntax files hence this two lines 
-:let &runtimepath.=',/usr/share/vim/vim74a' 
-:let $VIMRUNTIME = "/usr/share/vim/vim74a"
+Bundle 'bling/vim-airline'
 
 filetype plugin indent on       "required!
 
@@ -54,3 +51,19 @@ set noswapfile                  " do not write annoying intermediate swap files,
                                 "    who did ever restore from swap files
                                 "    anyway?
                                 "    https://github.com/nvie/vimrc/blob/master/vimrc#L141
+" VIM powerline setups
+set laststatus=2
+set noshowmode
+
+augroup vimrc_autocmds
+    autocmd!
+    " highlight characters past column 80
+    autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
+    autocmd FileType python match Excess /\%80v.*/
+    autocmd FileType python set nowrap
+augroup END
+
+
+set splitbelow                  " Horizontal splits open below current file
+
+set splitright                  " Vertical splits open to the right of the current file
