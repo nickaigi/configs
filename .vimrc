@@ -1,9 +1,19 @@
+"   This is the personal .vimrc file of Nickson Kaigi. 
+"   While much of it is beneficial for general use, I would
+"   recommend picking out the parts you want and understand,
+"   as I have done from other notable vim purists
+"
+
 set nocompatible                "Use Vim settings, rather than Vi settings
                                 "Be IMproved
 
 filetype off                    "required!
 
-
+" I use Vundle https://github.com/gmarik/vundle as my
+" preferred plugin manager.... never got the hang of
+" vim-pathogen (no offence to the pathogen community)
+"
+"
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
