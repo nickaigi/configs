@@ -62,8 +62,17 @@ set noswapfile                  " do not write annoying intermediate swap files,
                                 "    anyway?
                                 "    https://github.com/nvie/vimrc/blob/master/vimrc#L141
 " VIM powerline setups
-set laststatus=2
-set noshowmode
+set laststatus=2                " Solves: statusline does not appear until I create a split
+
+set noshowmode                  " Get rid of the default mode indicator 
+
+let g:airline_powerline_fonts = 1   " Use powerline symbols
+
+set t_Co=256                    " Force Vim into 246 color mode, to display airline colors
+
+set ttimeoutlen=50              "Solves: there is a pause when leaving insert mode
+
+let g:arline_theme = 'light'    " Self explanatory
 
 augroup vimrc_autocmds
     autocmd!
@@ -72,7 +81,6 @@ augroup vimrc_autocmds
     autocmd FileType python match Excess /\%80v.*/
     autocmd FileType python set nowrap
 augroup END
-
 
 set splitbelow                  " Horizontal splits open below current file
 
