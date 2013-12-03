@@ -70,6 +70,8 @@ let g:airline_powerline_fonts = 1   " Use powerline symbols
 
 set t_Co=256                    " Force Vim into 246 color mode, to display airline colors
 
+colorscheme peachpuff           " Original colorscheme on the bash shell... I got used to it
+
 set ttimeoutlen=50              "Solves: there is a pause when leaving insert mode
 
 let g:arline_theme = 'light'    " Self explanatory
@@ -85,3 +87,6 @@ augroup END
 set splitbelow                  " Horizontal splits open below current file
 
 set splitright                  " Vertical splits open to the right of the current file
+
+set wildmode=longest,list       " Pressing <Tab> shows command suggestions similar to pressing <Tab>
+                                " in bash 
