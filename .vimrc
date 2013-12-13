@@ -104,3 +104,7 @@ nnoremap <silent> ]B :blast<CR>
 
 "Easy expansion of the active file directory
 cnoremap <expr> %%  getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+"Shortcut to Mute Highlighting
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+
