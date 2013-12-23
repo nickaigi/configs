@@ -19,7 +19,6 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'Valloric/YouCompleteMe' 
-Bundle 'scrooloose/nerdtree'
 Bundle 'sophacles/vim-bundle-mako'
 Bundle 'bling/vim-airline'
 
