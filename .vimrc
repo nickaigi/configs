@@ -21,6 +21,7 @@ Bundle 'gmarik/vundle'
 Bundle 'Valloric/YouCompleteMe' 
 Bundle 'sophacles/vim-bundle-mako'
 Bundle 'bling/vim-airline'
+Bundle 'walm/jshint.vim'
 
 filetype plugin indent on       "required!
 
