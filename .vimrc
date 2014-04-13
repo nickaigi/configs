@@ -22,6 +22,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'sophacles/vim-bundle-mako'
 Bundle 'bling/vim-airline'
 Bundle 'walm/jshint.vim'
+Bundle 'mustache/vim-mustache-handlebars'
 
 filetype plugin indent on       "required!
 
@@ -108,3 +109,8 @@ cnoremap <expr> %%  getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 "Shortcut to Mute Highlighting
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
+"Activate Moustache Abreviations
+let g:mustache_abbreviations = 1
+
+"Root permission on a file inside VIM
+cmap w!! w !sudo tee >/dev/null %
