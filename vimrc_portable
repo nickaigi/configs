@@ -1,0 +1,17 @@
+" for when you need to travel lite
+set nocompatible
+set backspace=indent,eol,start
+set history=50
+set ruler
+set showcmd
+set incsearch
+set nu
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set hlsearch
+set ic
+set autoindent
+set showmatch
+set nobackup
+set noswapfile

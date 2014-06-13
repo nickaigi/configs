@@ -23,6 +23,7 @@ Bundle 'sophacles/vim-bundle-mako'
 Bundle 'bling/vim-airline'
 Bundle 'walm/jshint.vim'
 Bundle 'mustache/vim-mustache-handlebars'
+Bundle 'nvie/vim-flake8'
 
 filetype plugin indent on       "required!
 
