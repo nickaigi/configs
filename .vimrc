@@ -14,8 +14,8 @@ filetype off                    "required!
 " vim-pathogen (no offence to the pathogen community)
 "
 "
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 Bundle 'gmarik/vundle'
 Bundle 'Valloric/YouCompleteMe' 
@@ -73,8 +73,6 @@ set noshowmode                  " Get rid of the default mode indicator
 
 let g:airline_powerline_fonts = 1   " Use powerline symbols
 
-set t_Co=256                    " Force Vim into 246 color mode, to display airline colors
-
 let g:arline_theme = 'light'    " Self explanatory
 
 " End of airline configs
@@ -82,14 +80,6 @@ let g:arline_theme = 'light'    " Self explanatory
 colorscheme peachpuff           " Original colorscheme on the bash shell... I got used to it
 
 set ttimeoutlen=50              "Solves: there is a pause when leaving insert mode
-
-" highlight characters past column 80
-augroup vimrc_autocmds
-    autocmd!
-    autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
-    autocmd FileType python match Excess /\%80v.*/
-    autocmd FileType python set nowrap
-augroup END
 
 set splitbelow                  " Horizontal splits open below current file
 
