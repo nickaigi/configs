@@ -1,0 +1,38 @@
+# nginx configuration for example-dev.example.com
+# rename this file according to your django app
+# the upstream component nginx needs to connect to
+upstream django {
+    #server unix:///tmp/uwsgi.sock; # for a file socket
+    server 127.0.0.1:8001; # for a web port socket (we'll use this first)
+    }
+
+# configuration of the server
+server {
+    # the port your site will be served on
+    listen      80;
+    # the domain name it will serve for
+    server_name .example-dev.example.com; # substitute your machine's IP address or FQDN
+    charset     utf-8;
+
+    # max upload size
+    client_max_body_size 75M;   # adjust to taste
+
+
+    location /static/ {
+        # remember
+        # root: APPENDS the location path
+        # alias: does not append the location path
+        alias /www/static;
+    }
+ 
+ 
+    location /media {
+        alias /www/static/adminsite;
+    }
+ 
+    # Finally, send all non-media requests to the Django server.
+    location / {
+        uwsgi_pass  django;
+        include     /etc/nginx/uwsgi_params; # the uwsgi_params file you installed
+    }
+}
