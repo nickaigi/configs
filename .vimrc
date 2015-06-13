@@ -20,7 +20,6 @@ call vundle#begin()
 Bundle 'gmarik/vundle'
 Bundle 'Valloric/YouCompleteMe' 
 Bundle 'sophacles/vim-bundle-mako'
-Bundle 'bling/vim-airline'
 Bundle 'walm/jshint.vim'
 Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'nvie/vim-flake8'
@@ -64,18 +63,6 @@ set noswapfile                  " do not write annoying intermediate swap files,
                                 "    anyway?
                                 "    https://github.com/nvie/vimrc/blob/master/vimrc#L141
 
-
-" VIM airline config
-
-set laststatus=2                " Solves: statusline does not appear until I create a split
-
-set noshowmode                  " Get rid of the default mode indicator 
-
-let g:airline_powerline_fonts = 1   " Use powerline symbols
-
-let g:arline_theme = 'light'    " Self explanatory
-
-" End of airline configs
 
 colorscheme peachpuff           " Original colorscheme on the bash shell... I got used to it
 
