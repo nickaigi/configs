@@ -9,21 +9,22 @@ set nocompatible                "Use Vim settings, rather than Vi settings
 
 filetype off                    "required!
 
-" I use Vundle https://github.com/gmarik/vundle as my
+" I use Vundle https://github.com/gmarik/Vundle.vim as my
 " preferred plugin manager.... never got the hang of
 " vim-pathogen (no offence to the pathogen community)
-"
-"
+
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Bundle 'gmarik/vundle'
-Bundle 'Valloric/YouCompleteMe' 
-Bundle 'sophacles/vim-bundle-mako'
-Bundle 'walm/jshint.vim'
-Bundle 'mustache/vim-mustache-handlebars'
-Bundle 'nvie/vim-flake8'
+" Let vundle manage itself
+Plugin 'gmarik/Vundle.vim'
 
+" Plugins
+Plugin 'Valloric/YouCompleteMe' 
+Plugin 'nvie/vim-flake8'
+
+call vundle#end()               " required
 filetype plugin indent on       "required!
 
 set backspace=indent,eol,start  "allow backspacing over everything in insert mode
