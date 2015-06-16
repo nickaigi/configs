@@ -90,8 +90,13 @@ nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 "Root permission on a file inside VIM
 cmap w!! w !sudo tee >/dev/null %
 
+" Airline stuff, can't live without it
+"
 "Populate powerline fonts
 let g:airline_powerline_fonts = 1
 set laststatus=2
 
+" End of airline stuff
+
 set t_Co=256
+colorscheme peachpuff
