@@ -23,6 +23,7 @@ Plugin 'gmarik/Vundle.vim'
 " Plugins
 Plugin 'Valloric/YouCompleteMe' 
 Plugin 'nvie/vim-flake8'
+Plugin 'bling/vim-airline'
 
 call vundle#end()               " required
 filetype plugin indent on       "required!
@@ -65,8 +66,6 @@ set noswapfile                  " do not write annoying intermediate swap files,
                                 "    https://github.com/nvie/vimrc/blob/master/vimrc#L141
 
 
-colorscheme peachpuff           " Original colorscheme on the bash shell... I got used to it
-
 set ttimeoutlen=50              "Solves: there is a pause when leaving insert mode
 
 set splitbelow                  " Horizontal splits open below current file
@@ -88,8 +87,11 @@ cnoremap <expr> %%  getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 "Shortcut to Mute Highlighting
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
-"Activate Moustache Abreviations
-let g:mustache_abbreviations = 1
-
 "Root permission on a file inside VIM
 cmap w!! w !sudo tee >/dev/null %
+
+"Populate powerline fonts
+let g:airline_powerline_fonts = 1
+set laststatus=2
+
+set t_Co=256
