@@ -2,6 +2,7 @@
 "   While much of it is beneficial for general use, I would
 "   recommend picking out the parts you want and understand,
 "   as I have done from other notable vim purists
+"   Updated 23/10/2017 - on Ubuntu 17.10
 "
 
 set nocompatible                "Use Vim settings, rather than Vi settings
@@ -23,7 +24,8 @@ Plugin 'gmarik/Vundle.vim'
 " Plugins
 Plugin 'Valloric/YouCompleteMe' 
 Plugin 'nvie/vim-flake8'
-Plugin 'bling/vim-airline'
+Plugin 'itchyny/lightline.vim'
+Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()               " required
 filetype plugin indent on       "required!
@@ -75,6 +77,8 @@ set splitright                  " Vertical splits open to the right of the curre
 set wildmode=longest,list       " Pressing <Tab> shows command suggestions similar to pressing <Tab>
                                 " in bash 
 
+set laststatus=2                " Solves lightline not showing
+
 " Mappings to traverse buffer list 
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
@@ -90,13 +94,8 @@ nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 "Root permission on a file inside VIM
 cmap w!! w !sudo tee >/dev/null %
 
-" Airline stuff, can't live without it
-"
-"Populate powerline fonts
-let g:airline_powerline_fonts = 1
-set laststatus=2
-
-" End of airline stuff
-
-set t_Co=256
-colorscheme peachpuff
+"To use the Solarized Dark Theme
+syntax enable
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
