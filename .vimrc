@@ -2,7 +2,7 @@
 "   While much of it is beneficial for general use, I would
 "   recommend picking out the parts you want and understand,
 "   as I have done from other notable vim purists
-"   Updated 23/10/2017 - on Ubuntu 17.10
+"   Updated 5/1/2019 - on Ubuntu 18.04
 "
 
 set nocompatible                "Use Vim settings, rather than Vi settings
@@ -24,8 +24,10 @@ Plugin 'gmarik/Vundle.vim'
 " Plugins
 Plugin 'Valloric/YouCompleteMe' 
 Plugin 'nvie/vim-flake8'
-Plugin 'itchyny/lightline.vim'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'lervag/vimtex'
 
 call vundle#end()               " required
 filetype plugin indent on       "required!
@@ -99,3 +101,10 @@ syntax enable
 set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
+
+let g:airline_powerline_fonts = 1
+let g:airline_solarized_bg='dark'
+
+" For C programming, allows ycm to compile the .c file and show syntax errors
+" inside vim
+let g:ycm_global_ycm_extra_conf = '/home/mutwa/projects/.ycm_extra_conf.py'
