@@ -108,3 +108,9 @@ let g:airline_solarized_bg='dark'
 " For C programming, allows ycm to compile the .c file and show syntax errors
 " inside vim
 let g:ycm_global_ycm_extra_conf = '/home/mutwa/projects/.ycm_extra_conf.py'
+
+"Apply YCM FixIt
+" <CR> or <Enter> or <Return>
+" to see key notations type
+" :h key-notation
+map <F9> : YcmCompleter FixIt<CR>
