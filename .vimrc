@@ -79,7 +79,8 @@ set splitright                  " Vertical splits open to the right of the curre
 set wildmode=longest,list       " Pressing <Tab> shows command suggestions similar to pressing <Tab>
                                 " in bash 
 
-set laststatus=2                " Solves lightline not showing
+set nrformats-=octal            " anytime I use <C-a> to increment a number by one or <C-x> decrement a number by one
+                                " vim should treat my numerals as decimals
 
 " Mappings to traverse buffer list 
 nnoremap <silent> [b :bprevious<CR>
