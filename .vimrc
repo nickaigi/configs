@@ -34,7 +34,7 @@ filetype plugin indent on       "required!
 
 set backspace=indent,eol,start  "allow backspacing over everything in insert mode
 
-set history=50                  "keep 50 lines of command line history
+set history=200                  "keep 200 lines of command line history
 
 set ruler                       "show the cursor position all the time
 
