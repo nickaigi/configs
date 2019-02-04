@@ -32,6 +32,8 @@ Plugin 'lervag/vimtex'
 call vundle#end()               " required
 filetype plugin indent on       "required!
 
+packadd! matchit      "enable matchit plugin
+
 set backspace=indent,eol,start  "allow backspacing over everything in insert mode
 
 set history=200                  "keep 200 lines of command line history
