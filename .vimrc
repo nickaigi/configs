@@ -84,6 +84,9 @@ set wildmode=longest,list       " Pressing <Tab> shows command suggestions simil
 set nrformats-=octal            " anytime I use <C-a> to increment a number by one or <C-x> decrement a number by one
                                 " vim should treat my numerals as decimals
 
+au FocusLost *:wa               " Save files when vim loses focus
+
+
 " Mappings to traverse buffer list 
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
