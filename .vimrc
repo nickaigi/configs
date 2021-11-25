@@ -2,7 +2,6 @@
 "   While much of it is beneficial for general use, I would
 "   recommend picking out the parts you want and understand,
 "   as I have done from other notable vim purists
-"   Updated 5/1/2019 - on Ubuntu 18.04
 "
 
 set nocompatible                "Use Vim settings, rather than Vi settings
@@ -19,15 +18,28 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Let vundle manage itself
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 " Plugins
-Plugin 'Valloric/YouCompleteMe' 
+Plugin 'ycm-core/YouCompleteMe' 
 Plugin 'nvie/vim-flake8'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'lervag/vimtex'
+Plugin 'udalov/kotlin-vim'
+Plugin 'vim/killersheep'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'preservim/nerdtree'
+
+" JS stuff
+Plugin 'pangloss/vim-javascript'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'maxmellon/vim-jsx-pretty'
+Plugin 'styled-components/vim-styled-components'
+Plugin 'SirVer/ultisnips'
+Plugin 'mlaursen/vim-react-snippets'
+Plugin 'prettier/vim-prettier', { 'do': 'npm install' }
 
 call vundle#end()               " required
 filetype plugin indent on       "required!
@@ -80,12 +92,15 @@ set splitright                  " Vertical splits open to the right of the curre
 
 set wildmode=longest,list       " Pressing <Tab> shows command suggestions similar to pressing <Tab>
                                 " in bash 
-
+ 
 set nrformats-=octal            " anytime I use <C-a> to increment a number by one or <C-x> decrement a number by one
                                 " vim should treat my numerals as decimals
 
 au FocusLost *:wa               " Save files when vim loses focus
 
+" Start NERDTree. If a file is specified, move the cursor to its window.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
 
 " Mappings to traverse buffer list 
 nnoremap <silent> [b :bprevious<CR>
@@ -102,21 +117,25 @@ nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 "Root permission on a file inside VIM
 cmap w!! w !sudo tee >/dev/null %
 
-"To use the Solarized Dark Theme
 syntax enable
-set background=dark
+"set background=dark
 let g:solarized_termcolors=256
-colorscheme solarized
+colorscheme gruvbox
+set bg=dark
 
 let g:airline_powerline_fonts = 1
 let g:airline_solarized_bg='dark'
 
-" For C programming, allows ycm to compile the .c file and show syntax errors
-" inside vim
 let g:ycm_global_ycm_extra_conf = '/home/mutwa/projects/.ycm_extra_conf.py'
 
 "Apply YCM FixIt
-" <CR> or <Enter> or <Return>
-" to see key notations type
-" :h key-notation
 map <F9> : YcmCompleter FixIt<CR>
+
+" configuration variables for vim-javascript
+let g:javascript_plugin_jsdoc = 1
+
+" UltiSnips
+" ================================================================
+let g:UltiSnipsExpandTrigger='<c-space>'
+
+let g:molokai_original = 1
