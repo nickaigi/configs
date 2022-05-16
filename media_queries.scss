@@ -1,0 +1,16 @@
+.class-name-that-should-resize {
+
+  @media screen and (max-width: 1775px) and (min-width: 1200px) {
+    font-size: 12px !important;
+  }
+  @media screen and (max-width: 1200px) and (min-width: 1024px) {
+    font-size: 11px !important;
+  }
+  @media screen and (max-width: 1024px) and (min-width: 575px) {
+    font-size: 9px !important;
+  }
+  @media screen and (max-width: 575px) {
+    font-size: 15px !important;
+  }
+
+}
