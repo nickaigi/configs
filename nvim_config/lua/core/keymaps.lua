@@ -1,4 +1,4 @@
-vim.opt.backspace = '2'
+vim.opt.backspace = '2'  -- 2 same as ":set backspace=indent,eol,start"
 vim.opt.showcmd = true
 vim.opt.incsearch = true
 vim.opt.nu = true
