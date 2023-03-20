@@ -2,7 +2,7 @@ vim.opt.backspace = '2'  -- 2 same as ":set backspace=indent,eol,start"
 vim.opt.showcmd = true
 vim.opt.incsearch = true
 vim.opt.nu = true
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 vim.opt.hlsearch = true
 vim.opt.autoindent = true
 vim.opt.showmatch = true
