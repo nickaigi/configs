@@ -1,5 +1,9 @@
 {
+    "Lua.completion.callSnippet": "Both",
+    "Lua.completion.postfix": ".",
+    "Lua.runtime.version": "LuaJIT",
     "Lua.diagnostics.globals": [
         "vim",
+        "jit",
     ],
 }
