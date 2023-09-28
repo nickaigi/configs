@@ -8,22 +8,22 @@ return {
         -- configure nvim-tree
         nvimtree.setup({
             view = {
-                width = 35,
-                relativenumber = true,
+                width = 30,
+                -- relativenumber = true,
             },
             -- change folder arrow icons
             renderer = {
                 indent_markers = {
                 enable = true
                 },
-                icons = {
-                glyphs = {
-                    folder = {
-                    arrow_closed = "", -- arrow when folder is closed
-                    arrow_open = "", -- arrow when folder is open
-                    },
-                },
-                },
+                --icons = {
+                --glyphs = {
+                --    folder = {
+                --    arrow_closed = "", -- arrow when folder is closed
+                --    arrow_open = "", -- arrow when folder is open
+                --    },
+                --},
+                --},
             },
             -- disable window_picker for
             -- explorer to work well with
@@ -36,7 +36,7 @@ return {
                 },
             },
             filters = {
-                custom = { ".DS_Store" },
+                dotfiles = true,
             },
             git = {
                 ignore = false,
