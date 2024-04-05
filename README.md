@@ -1,8 +1,6 @@
-config
-======
+# .dotfiles
 
-My Linux Configuration files
-
-Inspired by [coderholic's](https://github.com/coderholic) [config]( https://github.com/coderholic/config)
-
-I borrow the useful things I find from the more established developers around the web.
+* [Neovim](https://github.com/neovim/neovim)
+* [tmux](https://github.com/tmux/tmux)
+* [alacritty](https://github.com/alacritty/alacritty)
+* [zsh and Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh)
