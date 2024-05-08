@@ -1,4 +1,4 @@
-# .dotfiles
+# Configuration Files
 
 * [Neovim](https://github.com/neovim/neovim)
 * [tmux](https://github.com/tmux/tmux)
